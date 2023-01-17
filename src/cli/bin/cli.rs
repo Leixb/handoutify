@@ -60,7 +60,14 @@ fn convert(
 
 fn main() {
     let opt = Opt::from_args();
-    let filename_out = opt.output.unwrap_or(opt.file.clone() + "_handout.pdf");
+    let filename_out = opt.output.unwrap_or(
+        opt.file
+            .trim_end_matches(".pdf")
+            .to_string()
+            .clone()
+            .to_owned()
+            + "_handout.pdf",
+    );
     convert(
         opt.file,
         filename_out,
