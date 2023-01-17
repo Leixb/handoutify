@@ -4,6 +4,14 @@ version = "0.1.0"
 authors = ["Nils <nils@nilsand.re>"]
 edition = "2018"
 
+[[bin]]
+name = "handoutify-cli"
+path = "src/cli/bin/cli.rs"
+
+[[bin]]
+name = "handoutify"
+path = "src/web/bin/web.rs"
+
 [profile.dev.package.nom]
 opt-level = 2
 
@@ -19,3 +27,4 @@ askama = { version = "0.10.5", features = ["with-actix-web"] }
 askama_actix = "0.11.1"
 env_logger = "0.8.2"
 futures = "0.3.8"
+structopt = "0.3.26"
